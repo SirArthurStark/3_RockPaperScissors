@@ -31,7 +31,7 @@ function getPlayerChoice() {
 console.log(getPlayerChoice());
 
 //This function plays a single round of Rock, Paper, Scissors
-function playRound() {
+function playRound(playerSelection, computerSelection) {
     let roundResult = ''
     if (playerSelection === 'rock' && computerSelection === 'rock') {
         roundResult = 'Tie game. You both picked rock.';
@@ -51,8 +51,11 @@ function playRound() {
         roundResult = 'You lose. Scissors lose to rock.';
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
         roundResult = 'You win. Scissors beat paper.';
-    } 
+    } else {
+        roundResult = 'No result.';
+    }
     return roundResult;
+    console.log(roundResult);
 }
 
-console.log(playRound());
+console.log(playRound())
