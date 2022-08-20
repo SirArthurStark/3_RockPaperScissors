@@ -11,7 +11,8 @@ function getComputerChoice() {
     return computerSelection
   }
 
-console.log(getComputerChoice());
+computerSelection = getComputerChoice();
+console.log(computerSelection);
 
 //This function grabs the player's option via a pop-up box. 
 //It also checks that the option specifically matches either "Rock", "Paper" or "Scissors"
@@ -22,17 +23,18 @@ function getPlayerChoice() {
 
     if (playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors') {
         return playerSelection;
-        console.log(playerSelection);
     } else {
         getPlayerChoice();
     }
 }
 
-console.log(getPlayerChoice());
+playerSelection = getPlayerChoice();
+console.log(playerSelection);
 
 //This function plays a single round of Rock, Paper, Scissors
-function playRound(playerSelection, computerSelection) {
-    let roundResult = ''
+function playRound(computerSelection, playerSelection) {
+    let roundResult = '';
+
     if (playerSelection === 'rock' && computerSelection === 'rock') {
         roundResult = 'Tie game. You both picked rock.';
     } else if (playerSelection === 'paper' && computerSelection === 'paper') {
@@ -58,4 +60,4 @@ function playRound(playerSelection, computerSelection) {
     console.log(roundResult);
 }
 
-console.log(playRound())
+console.log(playRound(computerSelection, playerSelection));
